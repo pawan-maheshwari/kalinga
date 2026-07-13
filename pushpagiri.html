@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- ===== THE TAB NAME ===== -->
+<title>Pushpagiri — The Lost Treasure of Kalinga</title>
+<meta name="description" content="Pushpagiri — The Lost Treasure of Kalinga. Curated by Pawan Maheshwari.">
+<meta name="theme-color" content="#1E3A2F">
+
+<!-- ===== THE FAVICON (a gilded stupa upon the flower-mountain) ===== -->
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%231E3A2F"/><path d="M8 50h48" stroke="%23C9962E" stroke-width="3" stroke-linecap="round"/><path d="M14 50c4-10 10-15 18-15s14 5 18 15z" fill="%23C9962E" opacity=".35"/><path d="M32 20c6 0 11 5 11 11 0 4-2 7-5 9H26c-3-2-5-5-5-9 0-6 5-11 11-11z" fill="%23F6EFDF"/><path d="M32 8v8M32 8c-2 2-2 5 0 7 2-2 2-5 0-7z" fill="%23C9962E" stroke="%23C9962E" stroke-width="1.6"/><circle cx="32" cy="31" r="3.4" fill="%23C9962E"/></svg>'>
+
+<!-- ===== SOCIAL PREVIEW (WhatsApp / LinkedIn / X) ===== -->
+<meta property="og:title" content="Pushpagiri — The Lost Treasure of Kalinga">
+<meta property="og:description" content="A recovered artefact from The AI Athenaeum's vault.">
+<meta property="og:type" content="website">
+
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#14291F;overflow:hidden}
+  #frame{position:fixed;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s ease}
+  #frame.ready{opacity:1}
+
+  /* elegant loading screen — the payload is large, so we never show a blank page */
+  #veil{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(201,150,46,.18),transparent 70%),#14291F;
+    color:#F6EFDF;font-family:Georgia,'Times New Roman',serif;text-align:center;padding:1.5rem;
+    transition:opacity .6s ease;z-index:2}
+  #veil.gone{opacity:0;pointer-events:none}
+  #veil svg{width:78px;height:78px;filter:drop-shadow(0 0 16px rgba(228,200,120,.55));
+    animation:float 4s ease-in-out infinite}
+  #veil h1{font-size:1.9rem;font-weight:600;margin:1.2rem 0 .3rem;letter-spacing:.02em;
+    background:linear-gradient(100deg,#8a6a1c,#f4dd8e 35%,#c9962e 50%,#fdf0bf 70%,#8a6a1c);
+    background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shimmer 4s linear infinite}
+  #veil p{font-style:italic;color:#CFC7B0;margin:0 0 1.4rem;font-size:.98rem}
+  #bar{width:min(260px,70vw);height:3px;background:rgba(246,239,223,.15);border-radius:3px;overflow:hidden}
+  #bar span{display:block;height:100%;width:35%;background:linear-gradient(90deg,transparent,#E4C878,transparent);
+    animation:slide 1.4s ease-in-out infinite}
+  #veil small{display:block;margin-top:1rem;color:#8E886F;font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+  @keyframes shimmer{to{background-position:220% center}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes slide{0%{transform:translateX(-120%)}100%{transform:translateX(400%)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<div id="veil">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M8 50h48" stroke="#C9962E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M14 50c4-10 10-15 18-15s14 5 18 15z" fill="#C9962E" opacity=".35"/>
+    <path d="M32 20c6 0 11 5 11 11 0 4-2 7-5 9H26c-3-2-5-5-5-9 0-6 5-11 11-11z" fill="#F6EFDF"/>
+    <path d="M32 8v8M32 8c-2 2-2 5 0 7 2-2 2-5 0-7z" fill="#C9962E" stroke="#C9962E" stroke-width="1.6"/>
+    <circle cx="32" cy="31" r="3.4" fill="#C9962E"/>
+  </svg>
+  <h1>Pushpagiri</h1>
+  <p>The Lost Treasure of Kalinga</p>
+  <div id="bar"><span></span></div>
+  <small>Unsealing the archive…</small>
+</div>
+
+<!-- The original artefact, untouched. Relative path: works on GitHub Pages and on any mirror. -->
+<iframe id="frame" src="index.html" title="Pushpagiri — The Lost Treasure of Kalinga"
+        allow="fullscreen; autoplay; clipboard-write"></iframe>
+
+<script>
+  var frame = document.getElementById('frame');
+  var veil  = document.getElementById('veil');
+  function reveal(){
+    frame.classList.add('ready');
+    veil.classList.add('gone');
+    setTimeout(function(){ if(veil.parentNode) veil.parentNode.removeChild(veil); }, 700);
+  }
+  frame.addEventListener('load', reveal);
+  /* safety net: never trap the reader behind the veil */
+  setTimeout(reveal, 20000);
+</script>
+</body>
+</html>
